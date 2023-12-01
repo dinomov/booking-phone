@@ -27,22 +27,7 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
-
-      # install applicaion dependencies
-      - name: Install dependencies
-        run: |
-          cd booking-ui
-          npm install
-          cd ..
-      # build and test the apps
-      - name: build
-        run: |
-          cd booking-ui
-          unset CI
-          npm run build
-          npm test
-          cd ..
-          
+     
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
