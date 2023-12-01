@@ -1,0 +1,11 @@
+{
+  "exchanges": [
+    { "name": "booking-exchange", "type": "direct" }
+  ],
+  "queues": [
+    { "name": "booking-queue" }
+  ],
+  "bindings": [
+    { "source": "booking-exchange", "vhost": "/", "destination": "booking-queue", "destination_type": "queue", "routing_key": "booking-key" }
+  ]
+}

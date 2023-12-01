@@ -1,0 +1,112 @@
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+
+.btn-lg-su {
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top:15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user-form {
+  width: 400px;
+  margin: 30px auto;
+  background-color:white;
+  padding:30px;
+  border-radius:10px;
+}
+
+.form-group label {
+  margin-top:10px;
+  font-size: 20px;
+  float: left;
+}
+
+.errorMessage {
+  font-size: 20px;
+  color:red;
+}
+
+.form-control {
+  line-height: 2.0;
+}
+
+.table {
+  width:1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Three columns */
+  gap: 0px; /* Gap between cells */
+  background-color:#fff;
+  margin:auto;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.table-3 {
+  width:1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 0px; /* Gap between cells */
+  background-color:#fff;
+  margin:auto;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+.cell {
+  padding: 10px;
+  text-align: center;
+}
+
+.cell-hd {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cell-span-all {
+  grid-column: 1 / span 5;
+  margin: 10px;
+  background-color: #fee;
+}
+
+.phones {
+  width: 1200px;
+  margin: 30px auto;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.phones h2 {
+  text-align: start;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.margin-left {
+  margin-left: 5px;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  background-color:#f2f2f2;
+  padding:5px;
+}
+
+
+
+.send-btn {
+  width:20%;
+  height: 50px;
+}
+
+.inputarea {
+  padding:5px;
+}
+

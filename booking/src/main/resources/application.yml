@@ -1,0 +1,34 @@
+server:
+  port: 9991
+
+spring:
+  application:
+    name: booking-service
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/booking-phone?createDatabaseIfNotExist=true}
+    username: root
+    password: developer
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  sql:
+    init:
+      mode: always
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_URL:localhost}
+    port: 5672
+    username: admin
+    password: admin
+

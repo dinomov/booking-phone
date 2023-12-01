@@ -1,0 +1,43 @@
+version: "3.8"
+
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: localhost
+    ports:
+      - "5674:5672"
+      - "15672:15672" # Admin UI (http://localhost:15672  .. admin:admin)
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    volumes:
+      - ./rabbitmq/rabbitmq_data:/var/lib/rabbitmq
+      - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
+      - ./rabbitmq/definitions.json:/etc/rabbitmq/definitions.json
+
+  booking-db:
+    image: mysql
+    hostname: localhost
+    environment:
+      MYSQL_DATABASE: "booking-phone"
+      MYSQL_ROOT_PASSWORD: "developer"
+    ports:
+      - "3307:3306"
+
+  booking-ui:
+    image: booking-ui
+    ports:
+      - "3000:3000"
+  
+  booking:
+    image: booking-service
+    depends_on:
+      - booking-db
+    restart: always
+    ports:
+      - "9991:9991"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://booking-db:3306/booking-phone?createDatabaseIfNotExist=true
+      SPRING_RABBITMQ_URL: rabbitmq
