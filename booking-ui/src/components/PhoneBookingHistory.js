@@ -30,8 +30,8 @@ export default function PhoneBookingHistory() {
         }
     };
     useEffect(() => {
-        getPhoneById();
-        getHistories();
+        getPhoneById().then(r => {});
+        getHistories().then(r => {});
     }, []);
 
     return (

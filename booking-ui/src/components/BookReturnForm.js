@@ -18,7 +18,7 @@ function BookReturnForm() {
   }
 
   useEffect(()=> {
-    getPhoneById();
+    getPhoneById().then(r => {});
   }, []);
 
   const back = () => {
@@ -26,7 +26,7 @@ function BookReturnForm() {
   }
   const bookPhoneFunc = async () => {
     const response = await bookPhone(phoneId, eventBy);
-    if (response.status == 200) {
+    if (response.status === 200) {
       navigate("/");
     } else {
       alert(response.statusText);
@@ -35,7 +35,7 @@ function BookReturnForm() {
 
   const returnPhoneFunc = async () => {
     const response = await returnPhone(phoneId, eventBy);
-    if (response.status == 200) {
+    if (response.status === 200) {
       navigate("/");
     } else {
       alert(response.statusText);
