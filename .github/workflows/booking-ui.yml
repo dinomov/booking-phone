@@ -38,6 +38,7 @@ jobs:
       - name: build
         run: |
           cd booking-ui
+          unset CI
           npm run build
           npm test
           cd ..
