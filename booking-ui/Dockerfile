@@ -8,5 +8,5 @@ COPY package.json /booking-ui/
 
 RUN npm install
 
-
+EXPOSE 3000
 CMD ["npm", "start"]
