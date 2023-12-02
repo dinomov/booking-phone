@@ -12,10 +12,10 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: admin
-    volumes:
-      - ./rabbitmq/rabbitmq_data:/var/lib/rabbitmq
-      - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
-      - ./rabbitmq/definitions.json:/etc/rabbitmq/definitions.json
+ #   volumes:
+ #     - ./rabbitmq/rabbitmq_data:/var/lib/rabbitmq
+ #     - ./rabbitmq/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
+ #     - ./rabbitmq/definitions.json:/etc/rabbitmq/definitions.json
 
   booking-db:
     image: mysql
@@ -27,12 +27,12 @@ services:
       - "3307:3306"
 
   booking-ui:
-    image: booking-ui
+    image: dinomov/booking-ui
     ports:
       - "3000:3000"
   
   booking:
-    image: booking-service
+    image: dinomov/booking-service
     depends_on:
       - booking-db
     restart: always

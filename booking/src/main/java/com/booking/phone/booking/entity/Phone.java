@@ -22,6 +22,6 @@ public class Phone {
     private String eventBy;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "phone", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "phone", fetch = FetchType.LAZY)
     private List<BookingHistory> bookingHistory;
 }
